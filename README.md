@@ -8,9 +8,9 @@
 
 * Setting up MySql:
 
-    first run: 
+    first run (installs mysql, apache2 and phpmyadmin): 
     
-        sudo apt-get install lamp-server (installs mysql, apache2 and phpmyadmin)
+        sudo apt-get install lamp-server
 
     alternative for installing mysql:
 
@@ -44,8 +44,8 @@
 
 * Also install:
 
-    sudo apt-get install libmyclient-dev
-    sudo apt-get install phpmyadmin
+        sudo apt-get install libmyclient-dev
+        sudo apt-get install phpmyadmin
 
 * Setting up apache2:
 
@@ -116,5 +116,5 @@
         (login creditentials for user that has access to the databases that you want, and also the one that you previously created)
 
     change at test:
-    
+
         exact same thing as before, but instead of databasename_development use databasename_test
