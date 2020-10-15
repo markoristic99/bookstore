@@ -9,16 +9,19 @@
 * Setting up MySql:
     first run: 'sudo apt-get install lamp-server' (installs mysql, apache2 and phpmyadmin)
 
-    alternative (here for mysql only): https://linuxize.com/post/how-to-install-mysql-on-ubuntu-18-04/ --for installing mysql
+    alternative for installing mysql:
+
+        https://linuxize.com/post/how-to-install-mysql-on-ubuntu-18-04/
 
     After installation run the following commands for the setup of mysql root password:
         
-    sudo mysql
+        sudo mysql
         ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'my_new_pass';
         FLUSH PRIVILEGES;
-    mysql -u root -p my_new_pass
+        mysql -u root -p my_new_pass
 
     In mysql terminal (that you access via previous command), run the following commands:
+
         CREATE DATABASE databasename_development;
         CREATE DATABASE databasename_test;
         
@@ -79,4 +82,3 @@
 
     change at test:
         exact same thing as before, but instead of databasename_development use databasename_test
-        
