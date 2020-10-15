@@ -92,21 +92,25 @@
         'gem install mysql2'    
 
 * Editing gemfile:
-    
-    gem 'mysql2' instead of gem 'sqlite3'
-    gem 'therubyracer', platforms: :ruby
+
+    change:
+
+        gem 'mysql2' instead of gem 'sqlite3'
+        gem 'therubyracer', platforms: :ruby
 
 * Editing database.yml:
 
     change at default:
-     
+
         'adapter: sqlite3' to 'adapter: mysql2'
     
     change at development: 
 
         'adapter: sqlite3' to 'adapter: mysql2'
         'database: db/development.sqlite3' to 'database: databasename(the one that you created in mysql)_development'
+
         add:
+        
         username: newuser
         password: my_new_password
         (login creditentials for user that has access to the databases that you want, and also the one that you previously created)
