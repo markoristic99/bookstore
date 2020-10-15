@@ -49,62 +49,62 @@
 
 * Setting up apache2:
 
-    Follow the link, to make sure the apache2 is installed and configured: 
+    * Follow the link, to make sure the apache2 is installed and configured: 
     
         https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-ubuntu-20-04
     
-    After installation: 
+    * After installation: 
     
-    if sudo ufw status returns inactive run: 
+    * if sudo ufw status returns inactive run: 
         
         sudo ufw enable
 
-    next to see your ip address:
+    * next to see your ip address:
     
         hostname -I | awk '{print $1}' to see your ip address
         
-    run in your browser to see if apache2 is working correctly  
+    * run in your browser to see if apache2 is working correctly  
         
         http://your_ip_adress 
 
-    run to see your host name and mark it down (it's the one that is not marked as localhost)
+    * run to see your host name and mark it down (it's the one that is not marked as localhost)
             
         sudo nano /etc/hosts 
 
-    run to configure phpmyadmin:
+    * run to configure phpmyadmin:
             
         sudo nano /etc/apache2/apache2.conf
 
-    Add the following two lines to that file:
+    * Add the following two lines to that file:
             
         Include /etc/phpmyadmin/apache.conf
 
         ServerName your_host_name (the one that you marked down previously)
 
-    run in your browser to see if everything is working:
+    * run in your browser to see if everything is working:
 
         localhost/phpmyadmin
 
 * Installing gems:
 
-    run:
+    * run:
         
         'gem install mysql2'    
 
 * Editing gemfile:
 
-    change:
+    * change:
 
         gem 'mysql2' instead of gem 'sqlite3'
         gem 'therubyracer', platforms: :ruby
 
 * Editing database.yml:
 
-    change at default:
+    * change at default:
 
         'adapter: sqlite3' to 'adapter: mysql2'
     
-    change at development: 
+    * change at development: 
 
         'adapter: sqlite3' to 'adapter: mysql2'
         'database: db/development.sqlite3' to 'database: databasename(the one that you created in mysql)_development'
@@ -115,14 +115,14 @@
         password: my_new_password
         (login creditentials for user that has access to the databases that you want, and also the one that you previously created)
 
-    change at test:
+    * change at test:
 
         exact same thing as before, but instead of databasename_development use databasename_test
 
 * Nodejs and yarn:
 
-    If for some reason yarn doesn't want to be install, it's probably the outdated nodejs version.
-    To fix that run the following commands:
+    * If for some reason yarn doesn't want to be install, it's probably the outdated nodejs version.
+      To fix that run the following commands:
 
         cd ~
         curl -sL https://deb.nodesource.com/setup_10.x -o nodesource_setup.sh
@@ -130,12 +130,12 @@
         sudo apt install nodejs
         nodejs -v
 
-    At the end run: 
+    * At the end run: 
 
         yarn install --check-files
-    sudo sed -i "s/|\s*\((count(\$analyzed_sql_results\['select_expr'\]\)/| (\1)/g" /usr/share/phpmyadmin/libraries/sql.lib.php
+
 * phpmyadmin warning fix:
 
-    Just run this command:
+    * Just run this command:
 
         sudo sed -i "s/|\s*\((count(\$analyzed_sql_results\['select_expr'\]\)/| (\1)/g" /usr/share/phpmyadmin/libraries/sql.lib.php
