@@ -1,16 +1,16 @@
 # BOOKSTORE
 
-* Ruby version: 2.7.1
+## Ruby version: 2.7.1
 
-* Rails version: 6.0.3.3
+## Rails version: 6.0.3.3
 
-* Gems used: MySql2 and bootstrap
+## Gems used: MySql2 and bootstrap
 
-* Setting up MySql:
+## Setting up MySql:
 
     * first run (installs mysql, apache2 and phpmyadmin): 
     
-            sudo apt-get install lamp-server
+            sudo apt-get install lamp-server^
 
     * alternative for installing mysql:
 
@@ -42,12 +42,12 @@
     
             https://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql
 
-* Also install:
+## Also install:
 
         sudo apt-get install libmyclient-dev
         sudo apt-get install phpmyadmin
 
-* Setting up apache2:
+## Setting up apache2:
 
     * Follow the link, to make sure the apache2 is installed and configured: 
     
@@ -85,20 +85,20 @@
 
             localhost/phpmyadmin
 
-* Installing gems:
+## Installing gems:
 
     * run:
         
             'gem install mysql2'    
 
-* Editing gemfile:
+## Editing gemfile:
 
     * change:
 
             gem 'mysql2' instead of gem 'sqlite3'
             gem 'therubyracer', platforms: :ruby
 
-* Editing database.yml:
+## Editing database.yml:
 
     * change at default:
 
@@ -119,7 +119,7 @@
 
             exact same thing as before, but instead of databasename_development use databasename_test
 
-* Nodejs and yarn:
+## Nodejs and yarn:
 
     * If for some reason yarn doesn't want to be install, it's probably the outdated nodejs version.
       To fix that run the following commands:
@@ -134,7 +134,7 @@
 
             yarn install --check-files
 
-* phpmyadmin warning fix:
+## phpmyadmin warning fix:
 
     * Just run this command:
 
