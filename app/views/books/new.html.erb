@@ -26,10 +26,20 @@
 		<%= f.label :publisher %><br />
 		<%= f.select :publisher_id, Publisher.all.collect {|x| [x.name, x.id]}, {:include_blank => 'Select One'},class:'form-control', id: 'form-select' %><br /><br />
 	</div>
-
+	
 	<div class="form-group">
 		<%= f.label :format %><br />
 		<%= f.text_field :format ,class:'form-control' %><br />
+	</div>
+
+	<div class="form-group">
+		<%= f.label :year %><br />
+		<%= f.text_field :year ,class:'form-control' %><br />
+	</div>
+
+	<div class="form-group">
+		<%= f.label :coverpath %><br />
+		<%= f.text_field :coverpath ,class:'form-control' %><br />
 	</div>
 
 	<div class="form-group">
