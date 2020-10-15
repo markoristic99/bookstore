@@ -19,8 +19,8 @@
     After installation run the following commands for the setup of mysql root password:
         
         sudo mysql
-        ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'my_new_pass';
-        FLUSH PRIVILEGES;
+            ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'my_new_pass';
+            FLUSH PRIVILEGES;
         mysql -u root -p my_new_pass
 
     In mysql terminal (that you access via previous command), run the following commands:
@@ -38,40 +38,66 @@
         FLUSH PRIVILEGES;
         EXIT;
 
-    Also see: https://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql
+    Also see for additional info on user control: 
+    
+        https://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql
 
-* Also insall:
+* Also install:
+
     sudo apt-get install libmyclient-dev
     sudo apt-get install phpmyadmin
 
 * Setting up apache2:
 
-    Follow (optional, to make sure apache2 is intalled): https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-ubuntu-20-04 --for installing apache2
+    Follow the link, to make sure the apache2 is installed and configured: 
     
-    After installation if sudo ufw status returns inactvie run: sudo ufw enable
+        https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-ubuntu-20-04
+    
+    After installation: 
+    
+        if sudo ufw status returns inactive run: 
+        
+            sudo ufw enable
 
-    run 'hostname -I | awk '{print $1}'' to see your ip address
-    run 'http://your_ip_adress' in your browser to see if apache2 is workding correctly
+        next to see your ip address:
+    
+            hostname -I | awk '{print $1}' to see your ip address
+        
+        run in your browser to see if apache2 is working correctly  
+        
+            http://your_ip_adress 
 
-    run 'sudo nano /etc/hosts' to see your host name and mark it down (it's the one that is not marked as localhost)
+        run to see your host name and mark it down (it's the one that is not marked as localhost)
+            
+            sudo nano /etc/hosts 
 
-    run 'sudo nano /etc/apache2/apache2.conf
+        run to configure phpmyadmin:
+            
+            sudo nano /etc/apache2/apache2.conf
 
-    Add the following two lines to that file:
-        Include /etc/phpmyadmin/apache.conf
+        Add the following two lines to that file:
+            
+            Include /etc/phpmyadmin/apache.conf
 
-        ServerName your_host_name (the one that you marked down previously)
+            ServerName your_host_name (the one that you marked down previously)
 
-    run 'localhost/phpmyadmin' in your browser to see if everything is working
+        run in your browser to see if everything is working:
+
+            localhost/phpmyadmin
 
 * Installing gems:
-    run 'gem install mysql2'    
+
+    run:
+        
+        'gem install mysql2'    
 
 * Editing gemfile:
-    gem 'mysql2' instead of sqlite3
+    
+    gem 'mysql2' instead of gem 'sqlite3'
     gem 'therubyracer', platforms: :ruby
 
 * Editing database.yml:
+
     change at default: 
         'adapter: sqlite3' to 'adapter: mysql2'
     
