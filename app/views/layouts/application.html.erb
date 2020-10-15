@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= @page_title ? @page_title : "Welcome"%> | The BookStore</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  </head>
+
+  <body>
+
+  <nav class="navbar navbar-expand-md navbar-light bg-light shadow-sm">
+  
+  <div class="container">
+
+  <div class="collapse navbar-collapse" id="navbar">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "Home", root_path, :class => 'btn btn-light'%> 
+      </li>
+      <li class="nav-item">
+        <a class="nav-item btn btn-light" href="<%= about_path%>">About</a>
+      </li>
+      </ul>
+      <ul class="navbar-nav navbar-right">
+      <li class="nav-item dropdown">
+        <a class="nav-item btn btn-light dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Add New</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01">
+          <a class="dropdown-item" href="<%= new_book_path%>">Book</a>
+          <a class="dropdown-item" href="<%= new_category_path%>">Category</a>
+          <a class="dropdown-item" href="<%= new_author_path%>">Author</a>
+          <a class="dropdown-item" href="<%= new_publisher_path %>">Publisher</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  </div>
+</nav>
+
+<header>
+  <div class="container">
+    <h1>The BookStore <small><%= @page_title ? @page_title : "Welcome"%></small></h1>
+  </div>
+</header>
+
+    <%= yield %>
+  </body>
+</html>
