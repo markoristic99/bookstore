@@ -7,7 +7,10 @@
 * Gems used: MySql2 and bootstrap
 
 * Setting up MySql:
-    first run: 'sudo apt-get install lamp-server' (installs mysql, apache2 and phpmyadmin)
+
+    first run: 
+    
+        sudo apt-get install lamp-server (installs mysql, apache2 and phpmyadmin)
 
     alternative for installing mysql:
 
