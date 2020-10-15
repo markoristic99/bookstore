@@ -11,42 +11,63 @@
   </head>
 
   <body>
+  <nav class="navbar navbar-expand-md navbar-light bg-light shadow-sm fixed-top">
+      <div class="container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-  <nav class="navbar navbar-expand-md navbar-light bg-light shadow-sm">
-  
-  <div class="container">
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link <%= params[:controller] ==  'books' ? 'active' : ''%>" href="<%= home_path%>">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link <%= params[:controller] ==  'about' ? 'active' : ''%>" href="<%= about_path%>">About</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav navbar-right">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Add New</a>
+                
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <a class="dropdown-item" href="<%= new_book_path%>">Book</a>
+              <a class="dropdown-item" href="<%= new_category_path%>">Category</a>
+              <a class="dropdown-item" href="<%= new_author_path%>">Author</a>
+              <a class="dropdown-item" href="<%= new_publisher_path %>">Publisher</a>
+            </div>
 
-  <div class="collapse navbar-collapse" id="navbar">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <%= link_to "Home", root_path, :class => 'btn btn-light'%> 
-      </li>
-      <li class="nav-item">
-        <a class="nav-item btn btn-light" href="<%= about_path%>">About</a>
-      </li>
+        </li>
       </ul>
-      <ul class="navbar-nav navbar-right">
-      <li class="nav-item dropdown">
-        <a class="nav-item btn btn-light dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Add New</a>
-        <div class="dropdown-menu" aria-labelledby="dropdown01">
-          <a class="dropdown-item" href="<%= new_book_path%>">Book</a>
-          <a class="dropdown-item" href="<%= new_category_path%>">Category</a>
-          <a class="dropdown-item" href="<%= new_author_path%>">Author</a>
-          <a class="dropdown-item" href="<%= new_publisher_path %>">Publisher</a>
+      </div>
+      </div>
+    </nav>
+
+  <header>
+    <div class="container">
+      <h1>The BookStore <small><%= @page_title ? @page_title : "Welcome"%></small></h1>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+
+          <%= yield %>
+
         </div>
-      </li>
-    </ul>
-  </div>
+        <div  class="col-md-4">
+          <%= render 'partials/sidebar'%>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  </div>
-</nav>
-
-<header>
-  <div class="container">
-    <h1>The BookStore <small><%= @page_title ? @page_title : "Welcome"%></small></h1>
-  </div>
-</header>
-
-    <%= yield %>
+  <footer>
+    <div class = "container">
+    <p> Copyright &copy; 2020, All Rights Reserved</p>
+    </div>
+  </footer>
   </body>
 </html>

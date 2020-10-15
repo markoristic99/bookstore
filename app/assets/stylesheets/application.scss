@@ -1,1 +1,76 @@
 @import "bootstrap/scss/bootstrap";
+
+body {
+    padding-top: 3rem;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5em;
+}
+
+header{
+    background: #333;
+    color: #fff;
+    margin-bottom: 40px;
+    height: 80px;
+    padding-top: 20px;
+}
+
+
+.dropdown-menu{
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+ }
+
+ footer{
+    background: #333;
+    color: #fff;
+    margin-top: 20px;
+    height: 60px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+#books-index {
+    text-align: center;
+}
+
+#books-index img {
+    width: 100%;
+    padding: 3px;
+    border: 1px #ccc solid;
+}
+
+#books-index h3 {
+    height: 70px;
+}
+
+#books-index .btn {
+    display: block;
+    margin-top: 20px;
+}
+
+#books-show h2{
+    background: #f4f4f4;
+    padding: 10px;
+}
+
+.books-show-left{
+    float: left;
+    width: 40%;
+}
+
+.books-show-right{
+    float: left;
+    width: 60%;
+    margin-top: 10px;
+}
+
+#books-show .btn {
+    margin: 20px 0 0 70px;
+}
+
+#form-select{
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+ }

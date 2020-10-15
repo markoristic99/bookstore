@@ -118,3 +118,24 @@
     change at test:
 
         exact same thing as before, but instead of databasename_development use databasename_test
+
+* Nodejs and yarn:
+
+    If for some reason yarn doesn't want to be install, it's probably the outdated nodejs version.
+    To fix that run the following commands:
+
+        cd ~
+        curl -sL https://deb.nodesource.com/setup_10.x -o nodesource_setup.sh
+        sudo bash nodesource_setup.sh
+        sudo apt install nodejs
+        nodejs -v
+
+    At the end run: 
+
+        yarn install --check-files
+    sudo sed -i "s/|\s*\((count(\$analyzed_sql_results\['select_expr'\]\)/| (\1)/g" /usr/share/phpmyadmin/libraries/sql.lib.php
+* phpmyadmin warning fix:
+
+    Just run this command:
+
+        sudo sed -i "s/|\s*\((count(\$analyzed_sql_results\['select_expr'\]\)/| (\1)/g" /usr/share/phpmyadmin/libraries/sql.lib.php

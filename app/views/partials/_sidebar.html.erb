@@ -1,0 +1,23 @@
+<% if params[:controller] == 'about'%>
+
+<div class="card card-body bg-light">
+    <h3>Location info</h3>
+    <ul>
+        <li>The BookStore</li>
+        <li>Pirkheimerstr. 15</li>
+        <li>81373 München</li>
+        <li>Phone: (0176) 3113-9059</li>
+        <li>Email: marko.ristic99@gmail.com</li>
+    </li>
+</div>
+<%end%>
+
+<% if params[:controller] == 'books' && params[:action] == 'index' || params[:action] == 'show' %>
+
+<div class="list-group">
+  <a href="#" class="list-group-item list-group-item-action">Ruby on Rails</a>
+  <a href="#" class="list-group-item list-group-item-action">PHP</a>
+  <a href="#" class="list-group-item list-group-item-action">HTML5</a>
+</div>
+
+<%end%>
