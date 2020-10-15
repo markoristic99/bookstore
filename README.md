@@ -55,35 +55,35 @@
     
     After installation: 
     
-        if sudo ufw status returns inactive run: 
+    if sudo ufw status returns inactive run: 
         
-            sudo ufw enable
+        sudo ufw enable
 
-        next to see your ip address:
+    next to see your ip address:
     
-            hostname -I | awk '{print $1}' to see your ip address
+        hostname -I | awk '{print $1}' to see your ip address
         
-        run in your browser to see if apache2 is working correctly  
+    run in your browser to see if apache2 is working correctly  
         
-            http://your_ip_adress 
+        http://your_ip_adress 
 
-        run to see your host name and mark it down (it's the one that is not marked as localhost)
+    run to see your host name and mark it down (it's the one that is not marked as localhost)
             
-            sudo nano /etc/hosts 
+        sudo nano /etc/hosts 
 
-        run to configure phpmyadmin:
+    run to configure phpmyadmin:
             
-            sudo nano /etc/apache2/apache2.conf
+        sudo nano /etc/apache2/apache2.conf
 
-        Add the following two lines to that file:
+    Add the following two lines to that file:
             
-            Include /etc/phpmyadmin/apache.conf
+        Include /etc/phpmyadmin/apache.conf
 
-            ServerName your_host_name (the one that you marked down previously)
+        ServerName your_host_name (the one that you marked down previously)
 
-        run in your browser to see if everything is working:
+    run in your browser to see if everything is working:
 
-            localhost/phpmyadmin
+        localhost/phpmyadmin
 
 * Installing gems:
 
@@ -98,10 +98,12 @@
 
 * Editing database.yml:
 
-    change at default: 
+    change at default:
+     
         'adapter: sqlite3' to 'adapter: mysql2'
     
     change at development: 
+
         'adapter: sqlite3' to 'adapter: mysql2'
         'database: db/development.sqlite3' to 'database: databasename(the one that you created in mysql)_development'
         add:
